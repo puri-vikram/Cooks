@@ -1,0 +1,1 @@
+export const SET_CHATUSERS = 'SET_CHATUSERS';

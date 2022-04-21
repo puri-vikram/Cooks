@@ -1,0 +1,10 @@
+<div class="main-menu-content">
+  <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+    <li {% if url == "dashboard" %} class="active" {% else %} class=" nav-item" {% endif %}><a href="/dashboard"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+    </li>
+    <li {% if url == "cooks" %} class="active" {% else %} class=" nav-item" {% endif %}><a href="/cooks"><i class="la la-group"></i><span class="menu-title" data-i18n="">Cooks</span></a>
+    </li>
+    <li {% if url == "users" %} class="active" {% else %} class=" nav-item" {% endif %}><a href="/users"><i class="la la-user"></i><span class="menu-title" data-i18n="">Users</span></a>
+    </li> 
+  </ul>
+</div>

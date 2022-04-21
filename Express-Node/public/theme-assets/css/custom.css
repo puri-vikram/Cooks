@@ -1,0 +1,122 @@
+.card-block.recepie-images img {
+    width: 100%;
+    padding: 10px;
+}
+.messagedata {
+    padding: 10px 15px;
+    position: relative;
+    color: green;
+    z-index: 9999999;
+    background-color: #cce4ee;
+    width: 100%;
+    font-size: 16px;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+
+.messagedataError {
+    padding: 20px;
+    position: relative;
+    color: red;
+    z-index: 9999999;
+    background-color: #cce4ee;
+    width: 100%;
+    font-size: 16px;
+}
+.messagedata a , .messagedataError a{
+    float: right;
+}
+.card-block.recepie-images ul {
+    list-style-type: none;
+}
+.card-block.recepie-images li {
+    width: 10%;
+    background-color: #f0f0f0;
+    margin: 15px;
+    float: left;
+    text-align: center;
+}
+img.user-image-custom {
+    margin: 15px;
+}
+.custom-multiselect input {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+.add-multisection-data span {
+    float: right;
+    color: green;
+    cursor: pointer;
+}
+.custom-multiselect label {
+    text-transform: capitalize;
+    float: left;
+}
+ul.custom-pagination li {
+    list-style: none;
+    display: inline-block;
+    padding: 0px 8px;
+    background-color: #47b61b;
+}
+ul.custom-pagination li.active {
+    background-color: #0b264c;
+}
+
+ul.custom-pagination li a {
+    color: #fff;
+}
+
+.main-menu.menu-light .navigation > li.hover > a, .main-menu.menu-light .navigation > li:hover > a, .main-menu.menu-light .navigation > li.active > a {
+    color: #47b61b !important;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #47b61b;
+}
+
+
+label#languagesewqe-error,
+label#dietary_preferencedasd-error,
+label#meal_typedas-error,
+label#cuisine_preferencedas-error,
+label#specialitysewqe-error {
+    float: left;
+    width: 100%;
+    padding-left: 20px;
+    color: red;
+}
+
+.navbar-header .navbar-brand .brand-logo {
+    width: 120px;
+    margin-left: 50px;
+}
+.custom-dashboard-views h5{padding: 35px !important;}
+.custom-dashboard-views i{padding: 28px 15px !important;}
+.content .content-wrapper-before {
+    height: 100% !important;
+}
+.custom-addlink {
+    padding-right: 50px;
+}
+
+.require::after {
+    content: '*';
+    color: red;
+    font-size: 20px;
+    position: absolute;
+    /* right: 4px; */
+    padding-left: 3px;
+}
+div#myModal h2 {
+    padding: 0;
+    margin: 0;
+}
+
+div#myModal .modal-body {
+    padding: 0 15px;
+}

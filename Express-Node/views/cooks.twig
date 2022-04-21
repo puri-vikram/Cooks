@@ -1,0 +1,164 @@
+{% extends "layout/layout.html" %}
+{% block content %}
+<div class="app-content content">
+    <div class="content-wrapper">
+      {% if message %}
+        <div class="messagedata">{{message}}
+          <a data-action="close"><i class="ft-x"></i></a>
+        </div>
+      {% endif %}
+      <div class="content-wrapper-before"></div>
+      <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+          <h3 class="content-header-title">Cooks</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+          <div class="breadcrumbs-top float-md-right">
+            <div class="breadcrumb-wrapper mr-1">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Cooks
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-body"><!-- Basic Tables start -->
+          <!-- Striped rows start -->
+          <div class="row">
+              <div class="col-12">
+                  <div class="card">
+                     <!--  <div class="card-header">
+                          <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                          <div class="heading-elements">
+                              <ul class="list-inline mb-0">
+                                  <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                  <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                              </ul>
+                          </div>
+                      </div> -->
+                      <div class="card-content collapse show">
+                          <div class="card-body">
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <p class="card-text">Filters</p>
+                                </div>
+                                <div class="col-sm-6">
+                                  <p class="card-text custom-addlink float-right"><a class="btn btn-icon btn-info" href="/cook/add">Add Cook</a></p>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="table-responsive">
+                              <table class="table table-striped">
+                                  <thead>
+                                      <tr>
+                                         <!--  <th scope="col">Image</th> -->
+                                          <th scope="col">Full Name</th>
+                                          <th scope="col">Email</th>
+                                          <th scope="col">Hourly Rate</th>
+                                          <th scope="col">Action</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                        <form accept="/customers" method="get">
+                                          
+                                          <!-- <th></th> -->
+                                          <th>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" id="firstname" name="firstname" value="{{ searchData.firstname }}">
+                                            </fieldset> 
+                                          </th>
+                                          <th>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" id="email" name="email" value="{{ searchData.email }}">
+                                            </fieldset>
+                                          </th>
+                                           <th>
+                                            <fieldset class="form-group">
+                                                <input type="number" class="form-control" id="hourly_rate" name="hourly_rate" value="{{ searchData.hourly_rate }}">
+                                            </fieldset>
+                                          </th>
+                                          <th>
+                                            <fieldset class="form-group">
+                                                <button type="submit" class="btn btn-icon btn-info mr-1"><i class="la la-search"></i></button>
+                                            </fieldset>
+                                          </th>
+                                          
+                                        </form>
+                                      </tr>
+                                      {% if cooks %}
+                                      {% for cook in cooks %}
+                                        <tr>
+                                          <!-- <td>
+                                            {% if cook.pictures %}
+                                            <img src="{{BASE_URL}}{{ cook.pictures }}" width="50px">
+                                            {% else %}
+                                              <img src="/theme-assets/images/portrait/small/user.png" width="50px">
+                                            {% endif %}
+                                          </td> -->
+                                          <td>
+                                            {% if cook.pictures %}
+                                            <img src="{{BASE_URL}}{{ cook.pictures }}" width="50px">
+                                            {% else %}
+                                              <img src="/theme-assets/images/portrait/small/user.png" width="50px">
+                                            {% endif %}
+                                            {{ cook.firstname }} {{ cook.lastname }}
+                                          </td>
+                                          <td>{{ cook.email }}</td>
+                                          <td>{{ cook.hourly_rate }}</td>
+                                          <td>
+                                            <a href="/cook/edit/{{ cook._id }}">Edit</a>/
+                                            <a href="javascript:void(0)" data="/cook/delete/{{ cook._id }}?page={{page}}&limit={{limit}}&firstname={{ searchData.firstname }}&email={{ searchData.email }}&hourly_rate={{ searchData.hourly_rate }}" data-toggle="modal" data-target="#myModal" class="deleteButton">Delete</a></td>
+                                        </tr>
+                                      {% endfor %}
+                                      {% else %}
+                                      <tr><td colspan="3">No result found</td></tr>
+                                      {% endif %}
+                                  </tbody>
+                              </table>
+                          </div>
+                           {% if totalpage > 1 %}
+                          <ul class="custom-pagination">
+                            {% for i in 1..totalpage %}
+                                {% if page == i %}
+                                <li class="active"><a href="/cooks?page={{i}}&limit={{limit}}&firstname={{ searchData.firstname }}&email={{ searchData.email }}&hourly_rate={{ searchData.hourly_rate }}">{{i}}</a></li>
+                                {% else %}
+                                <li><a href="/cooks?page={{i}}&limit={{limit}}&firstname={{ searchData.firstname }}&email={{ searchData.email }}&hourly_rate={{ searchData.hourly_rate }}">{{i}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                          {% endif %}
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Striped rows end -->
+
+      </div>
+
+    </div>
+  </div>
+  <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h2>Are you sure?</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="" id="deletepopup" class="btn btn-icon btn-info ml-1">Confirm</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+  {% endblock %}

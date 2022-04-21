@@ -1,0 +1,1 @@
+export const SAVE_COOKS = 'SAVE_COOKS';

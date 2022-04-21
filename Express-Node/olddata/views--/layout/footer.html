@@ -1,0 +1,390 @@
+<!-- BEGIN VENDOR JS-->
+<script src="/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
+<script src="/theme-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN CHAMELEON  JS-->
+<script src="/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+<script src="/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+<!-- END CHAMELEON  JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<script src="/theme-assets/js/scripts/pages/dashboard-lite.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL JS-->
+
+
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('.messagedata a').click(function(){
+			jQuery('.messagedata').remove();
+		});
+		setTimeout(function() { jQuery('.messagedata').remove()}, 3000);
+		jQuery('.recepie-images li span').click(function(){
+			var recipeimages = jQuery('#recipeimages'+jQuery(this).attr('rec-id')).val();
+			recipeimages = recipeimages.split(',');
+			var removeimage = jQuery(this).attr('data');
+			const index = recipeimages.indexOf(removeimage);
+			if (index > -1) {
+			  recipeimages.splice(index, 1); 
+			}
+			recipeimages = recipeimages.join();
+			jQuery('#recipeimages'+jQuery(this).attr('rec-id')).val(recipeimages);
+			jQuery(this).parent('li').remove();
+		});
+	});
+
+  	jQuery('#update_password').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	password:{
+            	required:true,
+            	minlength : 8
+          	},
+          	c_password:{
+          	  	required:true,
+          	  	equalTo : "#password"
+          	}
+      	}
+  	});
+  	jQuery('.recipe-form').each(function() {
+	  	jQuery(this).validate({
+	      	errorClass:"red",
+	      	validClass:"green",
+	      	rules:{
+	          	title:{
+	            	required:true
+	          	},
+	          	diet_type:{
+	          	  	required:true
+	          	},
+	          	description:{
+	          	  	required:true
+	          	}
+	      	}
+	  	});
+  	});
+  	jQuery('#edit_user').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	firstname:{
+            	required:true
+          	},
+          	lastname:{
+          	  	required:true
+          	},
+          	email:{
+          	  	required:true
+          	},
+          	about_me:{
+          	  	required:true
+          	},
+          	country:{
+          	  	required:true
+          	},
+          	state:{
+          	  	required:true
+          	},
+          	city:{
+          	  	required:true
+          	},
+          	zipcode:{
+          	  	required:true
+          	},
+          	address:{
+          	  	required:true
+          	}
+      	}
+  	});
+  	jQuery('#add_user').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	firstname:{
+            	required:true
+          	},
+          	lastname:{
+          	  	required:true
+          	},
+          	email:{
+          	  	required:true
+          	},
+          	about_me:{
+          	  	required:true
+          	},
+          	country:{
+          	  	required:true
+          	},
+          	state:{
+          	  	required:true
+          	},
+          	city:{
+          	  	required:true
+          	},
+          	zipcode:{
+          	  	required:true
+          	},
+          	address:{
+          	  	required:true
+          	},
+          	password:{
+            	required:true,
+            	minlength : 8
+          	},
+      	}
+  	});
+  	jQuery('#edit_cook').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	firstname:{
+            	required:true
+          	},
+          	lastname:{
+          	  	required:true
+          	},
+          	email:{
+          	  	required:true
+          	},
+          	about_me:{
+          	  	required:true
+          	},
+          	hourly_rate:{
+          	  	required:true,
+          	  	digits: true
+          	},
+          	country:{
+          	  	required:true
+          	},
+          	state:{
+          	  	required:true
+          	},
+          	city:{
+          	  	required:true
+          	},
+          	zipcode:{
+          	  	required:true
+          	},
+          	address:{
+          	  	required:true
+          	},
+          	'languages[]':{
+          	  	required:true
+          	},
+          	'speciality[]':{
+          	  	required:true
+          	},
+          	'dietary_preference[]':{
+          	  	required:true
+          	},
+          	'meal_type[]':{
+          	  	required:true
+          	},
+          	'cuisine_preference[]':{
+          	  	required:true
+          	}
+      	},
+      	errorPlacement: function(error, element) {
+
+      		console.log(element.attr("name"));
+            if (element.attr("name") == "languages[]" ) {
+                $("#languagesewqe-error").text('This field is required.');
+            }  
+            if (element.attr("name") == "speciality[]" ) {
+                $("#specialitysewqe-error").text('This field is required.');
+            } 
+            if (element.attr("name") == "dietary_preference[]" ) {
+                $("#dietary_preferencedasd-error").text('This field is required.');
+            }  
+            if (element.attr("name") == "meal_type[]" ) {
+                $("#meal_typedas-error").text('This field is required.');
+            }  
+            if (element.attr("name") == "cuisine_preference[]" ) {
+                $("#cuisine_preferencedas-error").text('This field is required.');
+            }  
+            if(element.attr("type") != 'checkbox'){
+                error.insertAfter(element);
+            }
+        }
+  	});
+  	jQuery('#add_cook').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	firstname:{
+            	required:true
+          	},
+          	lastname:{
+          	  	required:true
+          	},
+          	email:{
+          	  	required:true
+          	},
+          	about_me:{
+          	  	required:true
+          	},
+          	hourly_rate:{
+          	  	required:true,
+          	  	digits: true
+          	},
+          	country:{
+          	  	required:true
+          	},
+          	state:{
+          	  	required:true
+          	},
+          	city:{
+          	  	required:true
+          	},
+          	zipcode:{
+          	  	required:true
+          	},
+          	address:{
+          	  	required:true
+          	},
+          	'languages[]':{
+          	  	required:true
+          	},
+          	'speciality[]':{
+          	  	required:true
+          	},
+          	'dietary_preference[]':{
+          	  	required:true
+          	},
+          	'meal_type[]':{
+          	  	required:true
+          	},
+          	'cuisine_preference[]':{
+          	  	required:true
+          	},
+          	password:{
+            	required:true,
+            	minlength : 8
+          	},
+      	},
+      	errorPlacement: function(error, element) {
+
+      		console.log(element.attr("name"));
+            if (element.attr("name") == "languages[]" ) {
+                $("#languagesewqe-error").text('This field is required.');
+            }  
+            if (element.attr("name") == "speciality[]" ) {
+                $("#specialitysewqe-error").text('This field is required.');
+            } 
+            if (element.attr("name") == "dietary_preference[]" ) {
+                $("#dietary_preferencedasd-error").text('This field is required.');
+            }  
+            if (element.attr("name") == "meal_type[]" ) {
+                $("#meal_typedas-error").text('This field is required.');
+            }  
+            if (element.attr("name") == "cuisine_preference[]" ) {
+                $("#cuisine_preferencedas-error").text('This field is required.');
+            }  
+            if(element.attr("type") != 'checkbox'){
+                error.insertAfter(element);
+            }
+        }
+  	});
+
+  	jQuery('#cookEditSubmit').click(function(){
+  		$("#languagesewqe-error, #specialitysewqe-error, #dietary_preferencedasd-error, #meal_typedas-error, #cuisine_preferencedas-error").text('');
+  	});
+  	jQuery('#addcustomlanguageform').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	addcustomlanguage:{
+            	required:true
+          	}
+      	}
+  	});
+  	jQuery('#addcustomlanguageform').submit(function(){
+  		event.preventDefault();
+  		if(jQuery('#addcustomlanguageform').valid()){
+  			var html = '<input type="checkbox" name="languages[]" class="form-control" value="'+jQuery('#add-custom-language').val()+'" checked><label>'+jQuery('#add-custom-language').val()+'</label>';
+  			jQuery('#languages-set').append(html);
+  			jQuery('#add-custom-language').val('');
+  			jQuery('.close').trigger('click');
+  		}
+  	});
+
+
+  	jQuery('#addcustomspecialityform').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	addcustomspeciality:{
+            	required:true
+          	}
+      	}
+  	});
+  	jQuery('#addcustomspecialityform').submit(function(){
+  		event.preventDefault();
+  		if(jQuery('#addcustomspecialityform').valid()){
+  			var html = '<input type="checkbox" name="speciality[]" class="form-control" value="'+jQuery('#add-custom-speciality').val()+'" checked><label>'+jQuery('#add-custom-speciality').val()+'</label>';
+  			jQuery('#speciality-set').append(html);
+  			jQuery('#add-custom-speciality').val('');
+  			jQuery('.close').trigger('click');
+  		}
+  	});
+
+  	jQuery('#addcustomdietary_preferenceform').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	addcustomdietary_preference:{
+            	required:true
+          	}
+      	}
+  	});
+  	jQuery('#addcustomdietary_preferenceform').submit(function(){
+  		event.preventDefault();
+  		if(jQuery('#addcustomdietary_preferenceform').valid()){
+  			var html = '<input type="checkbox" name="dietary_preference[]" class="form-control" value="'+jQuery('#add-custom-dietary_preference').val()+'" checked><label>'+jQuery('#add-custom-dietary_preference').val()+'</label>';
+  			jQuery('#dietary_preference-set').append(html);
+  			jQuery('#add-custom-dietary_preference').val('');
+  			jQuery('.close').trigger('click');
+  		}
+  	});
+
+  	jQuery('#addcustommeal_typeform').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	addcustommeal_type:{
+            	required:true
+          	}
+      	}
+  	});
+  	jQuery('#addcustommeal_typeform').submit(function(){
+  		event.preventDefault();
+  		if(jQuery('#addcustommeal_typeform').valid()){
+  			var html = '<input type="checkbox" name="meal_type[]" class="form-control" value="'+jQuery('#add-custom-meal_type').val()+'" checked><label>'+jQuery('#add-custom-meal_type').val()+'</label>';
+  			jQuery('#meal_type-set').append(html);
+  			jQuery('#add-custom-meal_type').val('');
+  			jQuery('.close').trigger('click');
+  		}
+  	});
+
+
+  	jQuery('#addcustomcuisine_preferenceform').validate({
+      	errorClass:"red",
+      	validClass:"green",
+      	rules:{
+          	addcustomcuisine_preference:{
+            	required:true
+          	}
+      	}
+  	});
+  	jQuery('#addcustomcuisine_preferenceform').submit(function(){
+  		event.preventDefault();
+  		if(jQuery('#addcustomcuisine_preferenceform').valid()){
+  			var html = '<input type="checkbox" name="cuisine_preference[]" class="form-control" value="'+jQuery('#add-custom-cuisine_preference').val()+'" checked><label>'+jQuery('#add-custom-cuisine_preference').val()+'</label>';
+  			jQuery('#cuisine_preference-set').append(html);
+  			jQuery('#add-custom-cuisine_preference').val('');
+  			jQuery('.close').trigger('click');
+  		}
+  	});
+</script>

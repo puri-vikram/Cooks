@@ -1,0 +1,124 @@
+{% extends "layout/layout.html" %}
+{% block content %}
+    <div class="app-content content">
+      <div class="content-wrapper">
+        {% if message %}
+          <div class="messagedata">{{message}}
+            <a data-action="close"><i class="ft-x"></i></a>
+          </div>
+        {% endif %}
+        <div class="content-wrapper-before"></div>
+        <div class="content-header row">
+          <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Edit Review</h3>
+          </div>
+          <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+              <div class="breadcrumb-wrapper mr-1">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Edit Review
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body"><!-- Basic Inputs start -->
+            <section class="basic-inputs">
+              <div class="row match-height">
+                  <div class="col-xl-12 col-lg-12 col-md-12">
+                      <div class="card">
+                          <div class="card-block">
+                            <form action="/review/updatedata/{{ reviewData._id }}" method="post" id="edit_review">
+                              <div class="card-body">
+                                <h5 class="mt-2 require">Title</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="title" class="form-control" value="{{ reviewData.title }}" >
+                                </fieldset>
+                                <h5 class="mt-2 require">Description</h5>
+                                <fieldset class="form-group">
+                                    <textarea class="form-control" name="description" id="placeTextarea" rows="3" placeholder="About me">{{ reviewData.description }}</textarea>
+                                </fieldset>
+                                <h5 class="mt-2 require">Rating</h5>
+                                <fieldset class="form-group">
+                                    <input type="number" name="rate" id="rate" class="form-control" value="{{ reviewData.rate|number_format(2, '.', ',') }}" readonly>
+                                </fieldset>
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                    <h5 class="mt-2 require">Communication</h5>
+                                    <fieldset class="form-group">
+                                        <input type="number" id="communication" name="communication" class="form-control" value="{{ reviewData.communication }}" >
+                                    </fieldset>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <h5 class="mt-2 require">Presentation</h5>
+                                    <fieldset class="form-group">
+                                        <input type="number" id="presentation" name="presentation" class="form-control" value="{{ reviewData.presentation }}" >
+                                    </fieldset>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                      <h5 class="mt-2 require">Taste</h5>
+                                      <fieldset class="form-group">
+                                          <input type="number" id="taste" name="taste" class="form-control" value="{{ reviewData.taste }}" >
+                                      </fieldset>
+                                  </div>
+                                  <div class="col-sm-6">
+                                      <h5 class="mt-2 require">Punctuality</h5>
+                                      <fieldset class="form-group">
+                                          <input type="number" id="punctuality" name="punctuality" class="form-control" value="{{ reviewData.punctuality }}" >
+                                      </fieldset>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-sm-6">
+                                      <h5 class="mt-2 require">Cleanliness</h5>
+                                      <fieldset class="form-group">
+                                          <input type="number" id="cleanliness" name="cleanliness" class="form-control" value="{{ reviewData.cleanliness }}" >
+                                      </fieldset>
+                                      </div>
+                                        <div class="col-sm-6">
+                                        <h5 class="mt-2 require">Value</h5>
+                                        <fieldset class="form-group">
+                                            <input type="number" id="value" name="value" class="form-control" value="{{ reviewData.value }}" >
+                                        </fieldset>
+                                      </div>
+                                  </div>
+                                
+                                <fieldset class="form-group">
+                                    <button type="submit" class="btn btn-dark btn-min-width mr-1 mb-1">Update</button>
+                                </fieldset>
+                              </div>
+                            </form>
+                          </div>
+                      </div>
+                      
+                  </div>
+                </div>
+            </section>
+        </div>
+
+      </div>
+    </div>
+  {% endblock %}
+    {% block scriptsdata %}
+    <script type="text/javascript">
+
+      jQuery(document).ready(function(){
+        jQuery('#value, #cleanliness, #punctuality, #taste, #presentation, #communication').change(function(){
+            var total = 
+            parseFloat(jQuery('#value').val()) + 
+            parseFloat(jQuery('#cleanliness').val()) + 
+            parseFloat(jQuery('#punctuality').val()) + 
+            parseFloat(jQuery('#taste').val()) + 
+            parseFloat(jQuery('#presentation').val()) + 
+            parseFloat(jQuery('#communication').val());
+            jQuery('#rate').val((total/6).toFixed(2));
+        });
+        
+      });
+    </script>
+{% endblock %}

@@ -1,0 +1,379 @@
+{% extends "layout/layout.html" %}
+{% block content %}
+    <div class="app-content content">
+      <div class="content-wrapper">
+        {% if message %}
+        <div class="messagedata">{{message}}
+          <a data-action="close"><i class="ft-x"></i></a>
+        </div>
+        {% endif %}
+        <div class="content-wrapper-before"></div>
+        <div class="content-header row">
+          <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Add Cook</h3>
+          </div>
+          <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+              <div class="breadcrumb-wrapper mr-1">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Add Cook
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body"><!-- Basic Inputs start -->
+            <section class="basic-inputs">
+              <div class="row match-height">
+                  <div class="col-xl-12 col-lg-12 col-md-12">
+                      <div class="card">
+                          <div class="card-block">
+                            <form action="/cook/add" method="post" id="add_cook" enctype="multipart/form-data">
+
+                              <div class="card-body">
+                                <h5 class="mt-2 require">First Name</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="firstname" class="form-control" value="{{ cookData.firstname }}" >
+                                </fieldset>
+                                <h5 class="mt-2 require">Last Name</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="lastname" class="form-control" value="{{ cookData.lastname }}" >
+                                </fieldset>
+                                <h5 class="mt-2 require">Email</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="email" class="form-control" value="{{ cookData.email }}">
+                                </fieldset>
+                                <h5 class="mt-2 require">Password</h5>
+                                <fieldset class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control" value="" >
+                                </fieldset>
+                                <h5 class="mt-2 require">Hourly rate</h5>
+                                <fieldset class="form-group">
+                                    <input type="number" name="hourly_rate" class="form-control" value="{{ cookData.hourly_rate }}" >
+                                </fieldset>
+                                <h5 class="mt-2 require">About me</h5>
+                                <fieldset class="form-group">
+                                    <textarea class="form-control" name="about_me" id="placeTextarea" rows="3" placeholder="About me">{{ cookData.about_me }}</textarea>
+                                </fieldset>
+                                <h5 class="mt-2">Image</h5>
+                                <fieldset class="form-group">
+                                    <input type="file" name="pictures" class="form-control">
+                                    {% if cookData.pictures %}
+                                    <img src="{{BASE_URL}}{{ cookData.pictures }}" width="50px" class="user-image-custom">
+                                    {% endif %}
+                                </fieldset>
+
+                                <h5 class="mt-2 require">Profession</h5>
+                                <fieldset class="form-group">
+                                    <select type="text" name="profession" class="form-control">
+                                      <option value="chef" {% if cookData.profession == "chef" %} selected {% endif %}>Chef</option>
+                                      <option value="cook" {% if cookData.profession == "cook" %} selected {% endif %}>Cook</option>
+                                    </select>
+                                </fieldset>
+
+                                <div class="add-multisection-data">
+                                  <h5 class="mt-2 require">Languages</h5>
+                                  <span data-toggle="modal" data-target="#addLanguageModel">Add Language</span>
+                                </div>
+                                <fieldset class="form-group custom-multiselect" id="languages-set">
+                                    {% for language in languages %}
+                                    <input type="checkbox" name="languages[]" class="form-control" value="{{language}}" {% if language in cookData.languages %} checked {% endif %}>
+                                    <label>{{language}}</label>
+                                    {% endfor %}
+
+                                    {% for language in cookData.languages %}
+                                      {% if language not in languages %}
+                                      <input type="checkbox" name="languages[]" class="form-control" value="{{language}}" {% if language in cookData.languages %} checked {% endif %}>
+                                      <label>{{language}}</label>
+                                      {% endif %}
+                                    {% endfor %}
+                                    <label id="languagesewqe-error"></label>
+                                    
+                                </fieldset>
+
+                                <div class="add-multisection-data">
+                                  <h5 class="mt-2 require">Speciality</h5>
+                                  <span data-toggle="modal" data-target="#addSpecialityModel">Add Speciality</span>
+                                </div>
+                                <fieldset class="form-group custom-multiselect" id="speciality-set">
+                                    {% for speciality in specialitys %}
+                                    <input type="checkbox" name="speciality[]" class="form-control" value="{{speciality}}" {% if speciality in cookData.speciality %} checked {% endif %}>
+                                    <label>{{speciality}}</label>
+                                    {% endfor %}
+
+                                    {% for speciality in cookData.speciality %}
+                                      {% if speciality not in specialitys %}
+                                      <input type="checkbox" name="speciality[]" class="form-control" value="{{speciality}}" {% if speciality in cookData.speciality %} checked {% endif %}>
+                                      <label>{{speciality}}</label>
+                                      {% endif %}
+                                    {% endfor %}
+                                    <label id="specialitysewqe-error"></label>
+                                </fieldset>
+
+                                <div class="add-multisection-data">
+                                  <h5 class="mt-2 require">Dietary Preference</h5>
+                                  <span data-toggle="modal" data-target="#adddietary_preferenceModel">Add Dietary Preference</span>
+                                </div>
+                                <fieldset class="form-group custom-multiselect" id="dietary_preference-set">
+                                    {% for diet in dietary_preferences %}
+                                    <input type="checkbox" name="dietary_preference[]" class="form-control" value="{{diet}}" {% if diet in cookData.dietary_preference %} checked {% endif %}>
+                                    <label>{{diet}}</label>
+                                    {% endfor %}
+
+                                    {% for diet in cookData.dietary_preference %}
+                                      {% if diet not in dietary_preferences %}
+                                      <input type="checkbox" name="dietary_preference[]" class="form-control" value="{{diet}}" {% if diet in cookData.dietary_preference %} checked {% endif %}>
+                                      <label>{{diet}}</label>
+                                      {% endif %}
+                                    {% endfor %}
+                                    <label id="dietary_preferencedasd-error"></label>
+                                    
+                                </fieldset>
+
+                                <div class="add-multisection-data">
+                                  <h5 class="mt-2 require">Meal Type</h5>
+                                  <span data-toggle="modal" data-target="#addmeal_typeModel">Add Meal Type</span>
+                                </div>
+                                <fieldset class="form-group custom-multiselect" id="meal_type-set">
+                                    {% for diet in meal_types %}
+                                    <input type="checkbox" name="meal_type[]" class="form-control" value="{{diet}}" {% if diet in cookData.meal_type %} checked {% endif %}>
+                                    <label>{{diet}}</label>
+                                    {% endfor %}
+
+                                    {% for diet in cookData.meal_type %}
+                                      {% if diet not in meal_types %}
+                                      <input type="checkbox" name="meal_type[]" class="form-control" value="{{diet}}" {% if diet in cookData.meal_type %} checked {% endif %}>
+                                      <label>{{diet}}</label>
+                                      {% endif %}
+                                    {% endfor %}
+                                    <label id="meal_typedas-error"></label>
+                                </fieldset>
+
+                                <div class="add-multisection-data">
+                                  <h5 class="mt-2 require">Cuisine Preference</h5>
+                                  <span data-toggle="modal" data-target="#addcuisine_preferenceModel">Add Cuisine Preference</span>
+                                </div>
+                                <fieldset class="form-group custom-multiselect" id="cuisine_preference-set">
+                                    {% for diet in cuisine_preferences %}
+                                    <input type="checkbox" name="cuisine_preference[]" class="form-control" value="{{diet}}" {% if diet in cookData.cuisine_preference %} checked {% endif %}>
+                                    <label>{{diet}}</label>
+                                    {% endfor %}
+
+                                    {% for diet in cookData.cuisine_preference %}
+                                      {% if diet not in cuisine_preferences %}
+                                      <input type="checkbox" name="cuisine_preference[]" class="form-control" value="{{diet}}" {% if diet in cookData.cuisine_preference %} checked {% endif %}>
+                                      <label>{{diet}}</label>
+                                      {% endif %}
+                                    {% endfor %}
+                                    <label id="cuisine_preferencedas-error"></label>
+                                </fieldset>
+
+
+                                <div class="row"><div class="col-sm-12"><h2>Address</h2></div></div>
+                                <h5 class="mt-2">Country</h5>
+                                <fieldset class="form-group">
+                                  <select name="country" class="form-control" id="countryData">
+                                    <option value="">Select Country</option>
+                                    {% for coun in Country.getAllCountries() %}
+                                      <option value="{{coun.isoCode}}">{{coun.name}}</option>
+                                    {% endfor %}
+                                  </select>
+                                  <!-- <input type="text" name="country" class="form-control" value="{{ cookData.country }}" > -->
+                                </fieldset>
+                                <h5 class="mt-2">State</h5>
+                                <fieldset class="form-group">
+                                  <select type="text" name="state" class="form-control" id="stateData" disabled>
+                                    <option value="">Select State</option>
+                                  </select>
+                                    <!-- <input type="text" name="state" class="form-control" value="{{ cookData.state }}" > -->
+                                </fieldset>
+                                <h5 class="mt-2">City</h5>
+                                <fieldset class="form-group">
+                                    <!-- <input type="text" name="city" class="form-control" value="{{ cookData.city }}" > -->
+                                    <select type="text" name="city" class="form-control" id="cityData" disabled>
+                                      <option value="">Select City</option>
+                                    </select>
+                                </fieldset>
+                                <h5 class="mt-2">Zipcode</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="zipcode" class="form-control" value="{{ cookData.zipcode }}" >
+                                </fieldset>
+                                <h5 class="mt-2">Address</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="address" class="form-control" value="{{ cookData.address }}" >
+                                </fieldset>
+                                
+                                <h5 class="mt-2">Location</h5>
+                                <fieldset class="form-group">
+                                    <input id="autocomplete" name="auto_location" class="form-control autocomplete" type="text" />
+                                    <input id="latitude" name="lat" value="{{ cookData.lat }}" type="hidden"/>
+                                    <input id="longitude" name="lng" value="{{ cookData.lng }}" type="hidden"/>
+                                </fieldset>
+                                
+                                <fieldset class="form-group">
+                                    <button type="submit" class="btn btn-dark btn-min-width mr-1 mb-1" id="cookEditSubmit">Create</button>
+                                </fieldset>
+                              </div>
+                            </form>
+                          </div>
+                      </div>
+                      
+                  </div>
+                </div>
+            </section>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="addLanguageModel" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <form id="addcustomlanguageform">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add New Language</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="add-custom-language" name="addcustomlanguage" class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark btn-min-width" id="addLanguageModelSubmit">Add</button>
+          </div>
+        </div>
+      </form>
+        
+      </div>
+    </div>
+    <div class="modal fade" id="addSpecialityModel" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <form id="addcustomspecialityform">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add New Speciality</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="add-custom-speciality" name="addcustomspeciality" class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark btn-min-width" id="addSpecialityModelSubmit">Add</button>
+          </div>
+        </div>
+      </form>
+        
+      </div>
+    </div>
+
+    <div class="modal fade" id="addmeal_typeModel" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <form id="addcustommeal_typeform">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add Meal Type</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="add-custom-meal_type" name="addcustommeal_type" class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark btn-min-width" id="addmeal_typeModelSubmit">Add</button>
+          </div>
+        </div>
+      </form>
+        
+      </div>
+    </div>
+
+    <div class="modal fade" id="adddietary_preferenceModel" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <form id="addcustomdietary_preferenceform">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add Dietary Preference</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="add-custom-dietary_preference" name="addcustomdietary_preference" class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark btn-min-width" id="adddietary_preferenceModelSubmit">Add</button>
+          </div>
+        </div>
+      </form>
+        
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="addcuisine_preferenceModel" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <form id="addcustomcuisine_preferenceform">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add Cuisine Preference</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="add-custom-cuisine_preference" name="addcustomcuisine_preference" class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-dark btn-min-width" id="addcuisine_preferenceModelSubmit">Add</button>
+          </div>
+        </div>
+      </form>
+        
+      </div>
+    </div>
+  {% endblock %}
+{% block scriptsdata %}
+    <script type="text/javascript">
+      var states = {{State.getAllStates()|json_encode()}}
+      var cities = {{City.getAllCities()|json_encode()}}
+      jQuery(document).ready(function(){
+
+        jQuery('input, textarea').blur(function(){
+          jQuery(this).val($.trim(jQuery(this).val()))
+        })
+        
+        jQuery('#countryData').change(function(){
+          if(jQuery('#countryData').val() != '') {
+            var html= '<option value="">Select State</option>';
+            states.forEach(function(data){
+              if(data.countryCode == jQuery('#countryData').val()){
+                html +='<option value="'+data.isoCode+'">'+data.name+'</option>';
+              }
+            });
+            $("#stateData").empty().append(html).attr('disabled' , false);
+          } else {
+            $("#stateData").attr('disabled' , true);
+          }
+        });
+        jQuery('#stateData').change(function(){
+          if(jQuery('#countryData').val() != '') {
+            var html= '<option value="">Select City</option>';
+            cities.forEach(function(data){
+              if(data.countryCode == jQuery('#countryData').val() && data.stateCode == jQuery('#stateData').val()){
+                html +='<option value="'+data.name+'">'+data.name+'</option>';
+              }
+            });
+            $("#cityData").empty().append(html).attr('disabled' , false);
+          } else {
+            $("#cityData").attr('disabled' , true);
+          }
+        });
+      });
+    </script>
+{% endblock %}

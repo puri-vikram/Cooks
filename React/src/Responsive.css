@@ -1,0 +1,1181 @@
+@media (max-width:1024px){
+
+  .find-button {
+    font-size: 20px;
+    padding: 18px 30px;
+  }
+  
+  .find-cooks-wrapper {
+    margin-top: 3rem;
+  }
+  
+  .home-page-banner {
+    width: 100%;
+    position: relative;
+    top: 30px;
+    left: 25px;
+  }
+  
+  .header-background-color {
+    padding: 4rem 0 2rem;
+  }
+  
+  .find-cooks-wrapper h1 {
+    font-size: 50px;
+  }
+  
+  /* message-page-start */
+  
+  .user-chat-profile-details h6 {
+    font-size: 14px;
+  }
+  
+  /* message-page-end */
+  
+  }
+  
+  
+  @media (max-width:991px) {
+  
+.--split-map-view {
+  display: flex !important;
+  margin: 15px 0;
+}
+
+.--split-map-view h5 {
+  margin: 0px !important;
+  width: 100%;
+  align-items: baseline !important;
+}
+
+.--split-map-view .sort-by-wrapper{
+  margin-top: 0px !important;
+}
+
+
+    /* home-page-start */
+  ::placeholder{
+    font-size: 15px;
+  }
+    
+  .find-cooks-wrapper h1 {
+    font-size: 35px;
+  }
+  
+  .home-page-banner {
+    width: 100%;
+    position: relative;
+    left: 22px;
+    padding-top: 4rem;
+    top: 0;
+  }
+  
+  .find-button {
+    font-size: 16px;
+    padding: 10px 18px;
+    margin-top: 3px;
+  }
+  
+  .find-cooks-wrapper .form-control {
+    height: 50px;
+    font-size: 15px;
+  }
+  
+  .find-cooks-wrapper .input-group-text {
+    height: 50px;
+  }
+  
+  .steps-wrapper h5 {
+    font-size: 16px;
+  }
+  
+  .steps-wrapper p {
+    font-size: 14px !important;
+  }
+  
+  .steps-wrapper h2 {
+    font-size: 30px;
+  }
+  
+  .Featured-cooks-heading {
+    font-size: 30px;
+  }
+  
+  .owl-carousel-1 .item{
+    display: block !important;
+    
+  }
+  
+  .owl-carousel-1 .item img{
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .testimonial-img-section {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header-background-color {
+    top: -230px;
+    padding: 5rem 0 2rem;
+  }
+  
+  .div-child-css .css-2b097c-container .css-yk16xz-control {
+    border: 0;
+    height: 40px;
+  }
+
+  .find-cooks-wrapper .css-1hwfws3 {
+    height: 45px;
+}
+
+
+  /* home-page-end */
+  
+  
+  
+  /* cook-listing-page */
+  .prize {
+    font-size: 20px;
+  }
+
+  .css-1wa3eu0-placeholder{
+    font-size: 12px;
+  }
+
+  .hourly-rate-section h5, .diet-preferences-section h5, .rating-section h5 {
+    padding-right: 10px;
+    font-size: 16px;
+    margin-bottom: 10px !important;
+}
+
+.cook_listing_filters_heading {
+  display: block;
+}
+
+.location-form label {
+  font-size: 16px;
+}
+
+.filter-section h5 {
+  font-size: 16px;
+}
+
+span.--cursor-pointer-underline.text-primary {
+  font-size: 14px;
+}
+
+.list-view h4 {
+  font-size: 18px;
+}
+
+.listing-heading h5 {
+  font-size: 16px;
+}
+  /* cook-listing-page-end */
+  
+  
+  /* cooks-details-page */
+  .chef-details-img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+
+  .cook-recipes img{
+    height: 200px;
+  }
+
+  /* cooks-details-page-end */
+  
+  /* message-page-start */
+  
+  .chat-wrapper h4 {
+    font-size: 16px;
+  }
+  
+  .user-chat-profile{
+    height: auto;
+  }
+  /* message-page-end */
+  
+  /* dashboard-page-start */
+  
+  .cook-dashboard p {
+    font-size: 14px;
+  }
+  
+  .cook-dashboard i {
+    font-size: 14px;
+  }
+  
+  .cook-dashboard h4 {
+    font-size: 16px;
+  }
+  
+  .cook-dashboard img{
+    height: auto;
+  }
+  
+  /* dashboard-page-end */
+  
+  /* About-us-page-start */
+  
+  .our-vision-section p {
+    font-size: 20px;
+  }
+  
+  .foodies-love-card-1-info h5 {
+    font-size: 16px;
+  }
+  
+  .foodies-love-card-1{
+    padding: 10px;
+  }
+  
+  /* About-us-page-end */
+  
+  /* Recipes-details-page-start */
+  
+  .recipe-detail-img-section img{
+    width: 50%;
+  }
+  
+  .recipe-detail-img-section{
+    display: flex;
+    align-items: center;
+  }
+  
+  .cooking-timing{
+    width: 45%;
+    margin-right: 0px;
+  }
+  
+  /* Recipes-details-page-end */
+  
+  /* Top/Feature-Cooks-start */
+
+  .star-ratings svg {
+    height: 16px !important;
+    width: 16px !important;
+}
+
+.featured-box-1 h5 {
+  font-size: 16px !important;
+}
+  /* Top/Feature-Cooks-end */
+  }
+  
+  
+  @media (max-width: 767px){
+  
+  h5{
+    font-size: 15px;
+  }
+  h6{
+    font-size: 14px;
+  }
+  
+  ::placeholder{
+    font-size: 14px;
+  }
+  p{
+    font-size: 14px;
+  }
+  
+  .text-drukWide-medium {
+    font-size: 14px;
+  }
+  
+  .find-cooks-wrapper .css-1hwfws3 {
+    height: 40px;
+}
+
+.recipe-detail-img-section img {
+  width: 100%;
+}
+
+.header-dropdown .navbar-collapse {
+  /* background-color: #fff; */
+  position: relative;
+  width: 100vw;
+  left: 0;
+  padding-left: 15px;
+  /* top: 70px; */
+}
+    /* Home-page-start */
+  
+    .admin-dropdown .btn {
+      font-size: 14px !important;
+      padding-left: 0px;
+  }
+  
+  .admin-dropdown{
+    margin-right: 0px;
+  }
+  
+  .navbar-toggler {
+    font-size: 24px;
+  }
+  
+  .owl-carousel-1 .item{
+    display: block !important;
+    
+  }
+  
+  .owl-carousel-1 .item img{
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .featured-cook-wrapper .testimonials-left-navigator {
+    position: absolute;
+    top: -225px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    left: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+    font-size: 20px;
+  }
+  
+  .featured-cook-wrapper .testimonials-right-navigator {
+    position: absolute;
+    top: -225px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    right: -345px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+    font-size: 20px;
+  }
+  
+  .testimonials-wrapper .testimonials-left-navigator {
+    position: absolute;
+    top: -245px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+  }
+  
+  .testimonials-wrapper .testimonials-right-navigator {
+    position: absolute;
+    top: -245px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    right: -350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+  }
+  
+  .testimonial-img-section {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .home-page-banner {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-bottom: 2rem;
+    padding-top: 0rem;
+  }
+  
+  .all-occassions::before {
+    content: "";
+    top: 29.5%;
+    left: 5%;
+    display: none;
+  }
+  
+  .all-occassions {
+    margin-left:0px;
+  }
+  
+  .find-cooks-wrapper h1 {
+    font-size: 25px;
+  }
+  
+  .navbar-brand {
+    width: 40%;
+  }
+  
+  .sign-in-icon {
+    font-size: 24px;
+  }
+  
+  .sign-up-icon {
+    font-size: 24px;
+  }
+  
+  .header-background-color {
+    top: -210px;
+  }
+  
+  .steps-wrapper {
+    text-align: center;
+  }
+  
+  .steps-wrapper p {
+    padding: 10px;
+    padding-top: 0px;
+  }
+  
+  .Featured-cooks-heading {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .owl-prev {
+    left: -15px !important;
+  }
+  
+  .testimonials-heading {
+    font-size: 25px;
+  }
+  
+  .steps-wrapper h2 {
+    font-size: 30px;
+  }
+  
+  .find-cooks-wrapper .form-control {
+    height: 50px;
+    font-size: 15px;
+  }
+  
+  .find-cooks-wrapper .input-group-text {
+    height: 50px;
+  }
+  
+  .find-cooks-wrapper .form-select{
+    padding-left: 22px;
+  }
+  
+  .find-button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+  
+  .featured-box-1{
+    margin-right: 10px;
+  }
+  
+  .owl-carousel-1 .item {
+    margin-right: 0rem;
+  }
+  
+  .testimonials-wrapper .owl-carousel .owl-item img {
+    width: 65%;
+  }
+
+  .testimonial-carousel{
+    padding: 1rem;
+  }
+  
+  .testimonials-wrapper i {
+    font-size: 20px;
+  }
+  
+  .testimonial-carousel p{
+    font-size: 14px !important;
+  }
+  
+  .div-child-css .css-2b097c-container .css-yk16xz-control {
+    border: 0;
+    height: 40px;
+  }
+
+  .dropdown-toggle::after {
+    visibility: hidden;
+    border: 0;
+    margin: 0;
+}
+  /* Home-page-end */
+  
+  
+  /* listing-section-start */
+  
+  .prize {
+    font-size: 14px;
+  }
+  
+  .filter-section{
+    display: none;
+  }
+  
+  .show-filter{
+    display: block !important;
+    height: 100vh;
+    background-color: #fff;
+    width: 100%;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    z-index: 1;
+  }
+  
+  .close {
+    background-color: #fff;
+    border: 0px;
+    font-size: 30px;
+  }
+  
+  .sort-by-list {
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  /* .filter-section .show-filter {
+    transform: translateX(105%);
+    transition: all .4s;
+  }  */
+  
+  /* .show-flters{
+  transform: translateX(-100%);
+    transition: all .1s;
+  } */
+  
+  .sort-by-wrapper {
+    width: 100%;
+    margin-top:15px;
+  }
+  
+  .list-view {
+    width: 48%;
+    padding: 3%;
+    display: inline-block;
+  }
+  
+  .header-dropdown .dropdown{
+    background-image: none !important;
+  }
+  
+  .cook-listing-view .list-view:nth-child(even) {
+    margin-left: 2%;
+  }
+  
+  .list-view h4 {
+    font-size: 14px;
+  }
+  
+  .list-view p {
+    font-size: 12px !important;
+  }
+  
+  .gold-icons {
+    font-size: 12px;
+  }
+  
+  .cook-book-button {
+    font-size: 14px;
+    padding: 2px 6px;
+    margin-top: 10px;
+  }
+  
+  .prize span {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .pagination .page-link{
+    font-size: 10px;
+  }
+
+  .hourly-rate-section h5, .diet-preferences-section h5, .rating-section h5 {
+    padding-right: 0px;
+    margin-bottom: 0px !important;
+}
+
+.cook_listing_filters_heading {
+  display: flex;
+}
+  /* listing-section-end */
+  
+  
+  /* cooks-details-page */
+  .recipes-background h2 {
+    font-size: 26px;
+}
+
+  .cook-details-tabs .nav {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    overflow: auto;
+    width: 100%;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  
+  
+  #speciality .recipe-decription {
+    position: absolute;
+    z-index: 1;
+    bottom: 27px;
+    padding-left: 15px;
+    color: #fff;
+    width: 97%;
+    left: 3px;
+    background: transparent linear-gradient( 180deg , #00000000 0%, #0000008C 100%) 0% 0% no-repeat padding-box;
+    border-bottom-left-radius: 18px;
+    overflow: hidden;
+    border-bottom-right-radius: 18px;
+  }
+  
+  #speciality .testimonials-left-navigator {
+    position: absolute;
+    top: -155px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+    font-size: 20px;
+  }
+  
+  #speciality .testimonials-right-navigator {
+    position: absolute;
+    top: -155px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    right: -345px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+    font-size: 20px;
+  }
+  
+  #recipes .testimonials-left-navigator {
+    position: absolute;
+    top: -155px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+    font-size: 20px;
+  }
+  
+  #recipes .testimonials-right-navigator {
+    position: absolute;
+    top: -155px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    right: -345px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+    font-size: 20px;
+  }
+  
+  
+  
+  /* width */
+  .nav::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Handle */
+  .nav::-webkit-scrollbar-thumb {
+    background: transparent; 
+    border-radius: 10px;
+  }
+  
+  
+  .cook-details-tabs .nav-link {
+    padding-left: 0px;
+  }
+  
+  .cook-details-tabs{
+    display: block !important;
+  }
+  
+  /* cooks-details-page-end */
+  
+  
+  /* signup-success-message-page */
+  
+  .signup-success-message h4{
+    font-size: 18px;
+  }
+  
+  .signup-success-message h5{
+    font-size: 16px;
+  }
+  /* signup-success-message-end */
+  
+  /* profile-details-page */
+  
+  .change-profile-icon {
+    height: 40px;
+    width: 40px;
+    bottom: 35px;
+    left: 148px;
+  }
+  
+  .change-profile-icon i {
+    font-size: 22px;
+    height: 40px;
+  }
+  
+  /* .inner-shadow {
+    padding: 0rem 2rem;
+  } */
+  
+  .profile-image i {
+    font-size: 6rem;
+    color: #ccc;
+  }
+  
+  .cook-recipes img{
+    height: 130px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+.cook_my_profile_arrow_left {
+  height: 30px;
+  width: 30px;
+  left: 0;
+  top: 35%;
+}
+
+.cook_my_profile_arrow_left i{
+  height: 30px;
+  width: 30px;
+}
+
+.cook_my_profile_arrow_right i{
+  height: 30px;
+  width: 30px;
+}
+
+
+.cook_my_profile_arrow_right {
+  height: 30px;
+  width: 30px;
+  right: 0;
+  top: 35%;
+}
+  /* profile-details-page-end */
+  
+  /* message-page-start */
+  
+  .conversation-footer {
+    display: none;
+  }
+  
+  .message-write-section {
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    left: 0;
+    width: 100%;
+  }
+  
+  .message-write-section ::placeholder{
+    font-size: 12px;
+  }
+  
+  .custom-width {
+    width: 100%;
+    display: inline;
+  }
+  .chat-wrapper {
+    border-right: 0px solid;
+  }
+  
+  .mobile-profile-view {
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .mobile-profile-user-name {
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 400 !important;
+  }
+  
+  .scroll-chat {
+    overflow-x: scroll;
+    display:block;
+    width: calc(100vw - 12px);
+    height: 100%;
+  }
+  
+  .chat-wrapper .nav{
+    display: flex !important;
+    flex-wrap: nowrap;
+  
+  }
+  
+  .scroll-messages::-webkit-scrollbar {
+    width: 0px !important;
+  }
+  
+  .chat-wrapper .nav-tabs .nav-link{
+    margin-bottom: 0px;
+  }
+  
+  .chat-wrapper .nav-tabs .nav-link {
+    border: 0px solid;
+    padding: 5px 5px;
+  }
+  
+  .chat-list h4 {
+    font-size: 18px;
+  }
+  
+  .conversation-msg,.conversation-msg-2{
+    width:70%;
+  }
+  
+  .scroll-messages {
+    overflow-y: scroll;
+    height: calc(100vh - 290px);
+    display: block;
+    width: 100%;
+  }
+  
+  .scroll-chat::-webkit-scrollbar-thumb {
+    background: transparent; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .scroll-chat::-webkit-scrollbar-thumb:hover {
+    background: transparent; 
+  }
+  
+  /* message-page-end */
+  
+  
+  /* complete-profile-page */
+  
+  .speciality-section input[type="checkbox"] + label {
+    padding: 12px 15px;
+    margin-right: 10px;
+  }
+  
+  /* complete-profile-end */
+  
+  /* dashboard-page-start */
+  /* .best-recipes-table {
+    display: block;
+    white-space: pre;
+    overflow-x: scroll;
+  }
+  
+  .best-recipes-img-section {
+    width: 100%;
+    white-space: unset;
+  }
+  
+  .best-recipes-img {
+    width: 100%;
+    white-space: unset;
+  } */
+  
+  span.recipe-table-content {
+    padding-top: 0px;
+    display: block;
+    font-size: 10px;
+  }
+  
+  .best-recipes-number {
+    width: 25px;
+    display: block;
+    height: 0px;
+  }
+  
+  .best-recipes-img-section {
+    width: 40px;
+  }
+  
+  .recipe-delete-icon {
+    background: transparent linear-gradient( 180deg , #E3EBF3 0%, #F1F5F9 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #F1F5F9;
+    border-radius: 5px;
+    padding: 2px 4px;
+  }
+  
+  .recipe-edit-icon {
+    background: transparent linear-gradient( 180deg , #E3EBF3 0%, #F1F5F9 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #F1F5F9;
+    border-radius: 5px;
+    padding: 2px 4px;
+  }
+  
+  .recipe-delete-icon i {
+    font-size: 14px;
+  }
+  
+  .recipe-edit-icon i {
+    font-size: 14px;
+  }
+  
+  .dashboard-best-recipes h4 {
+    font-size: 18px;
+  }
+  
+  .best-recipes-img{
+    height: 30px;
+    width: 30px;
+  }
+  
+  .dashboard-best-recipes button {
+    margin-bottom: 0px !important;
+  }
+  p.errorMsg.mb-0.mt-2.text-danger {
+    font-size: 10px;
+  }
+  /* dashboard-page-end */
+  
+  /* About-us-page-start */
+  
+  .about-us-banner{
+    height: 200px;
+  }
+  
+  .our-vision-section p {
+    font-size: 14px !important;
+    line-height: 24px;
+  }
+  
+  .our-vision-section{
+    margin: 0px;
+  }
+  
+  .book-now-wrapper h2 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+  .book-now-wrapper{
+    padding: 15px;
+  }
+  
+  .about-us-wrapper p {
+    font-size: 14px;
+  }
+  
+  .about-us-wrapper h2 {
+    font-size: 20px;
+  }
+  
+  /* About-us-page-end */
+  
+  
+  /* Add-new-recipes */
+  
+  .mobile-checkbox {
+    width: 50%;
+    margin: 5px 0 !important;
+  }
+  
+  .mobile-recipe-time-view {
+    width: 50%;
+  }
+  /* Add-new-recipes-end */
+  
+  
+  
+  
+  /* Recipe-details-page-start */
+  
+  .recipe-detail-img-section{
+    display: block;
+  }
+  
+  .recipe-detail-img{
+    width: auto;
+  }
+  
+  .cooking-timing{
+    width: 100%;
+    justify-content: start !important; 
+  }
+  
+  /* Recipes-details-page-end */
+  
+  /* Help-page-start */
+  
+  .help-wrapper .accordion-button{
+    font-size: 14px;
+  }
+  
+  /* Help-page-end */
+  
+  }
+  
+  
+  
+  
+  
+  /* modal */
+  
+  @media (min-width: 576px){
+  .modal-dialog {
+    max-width: 450px;
+    margin: 1.75rem auto;
+  }
+  
+  .modal-content{
+  box-shadow: 5px 10px 20px #697F961A;
+  border: 1px solid #F1F5F9;
+  border-radius: 10px;
+  }
+  
+  .reset-password-alert .modal-dialog{
+    max-width: 500px;
+  }
+  
+  .reset-password-alert .modal-content{
+  
+  border: none;
+  border-radius: auto;
+  }
+  }
+  /* modal-end */
+  
+  @media (max-width: 576px){
+    .steps-wrapper{
+      padding-top: 6rem;
+    }
+  }
+  
+  @media (max-width: 420px){
+    .steps-wrapper{
+      padding-top: 0rem;
+    }
+    .chat-section .media-img {
+      max-width: 70px;
+    }
+  }
+  
+  @media (max-width:320px){
+  
+    /* Recipe-details-page-start */
+    .cooking-timing p {
+      font-size: 14px;
+  }
+    /* Recipe-details-page-end */
+  
+  
+    /* cook-details-page-start */
+  
+    #speciality .testimonials-left-navigator {
+      position: absolute;
+      top: -130px;
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      left: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      box-shadow: 5px 10px 20px #697f961a;
+      border: 1px solid #E3EBF3;
+      font-size: 20px;
+  }
+  
+  #speciality .testimonials-right-navigator {
+    position: absolute;
+    top: -130px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    right: -308px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+    font-size: 20px;
+  }
+  
+  #recipes .testimonials-left-navigator {
+    position: absolute;
+    top: -130px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 5px 10px 20px #697f961a;
+    border: 1px solid #E3EBF3;
+    font-size: 20px;
+  }
+  
+  #recipes .testimonials-right-navigator {
+  position: absolute;
+  top: -130px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  right: -308px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  box-shadow: 5px 10px 20px #697f961a;
+  border: 1px solid #E3EBF3;
+  font-size: 20px;
+  }
+  
+    /* cook-details-page-end */
+  
+  }

@@ -1,0 +1,155 @@
+{% extends "layout/layout.html" %}
+{% block content %}
+<div class="app-content content">
+    <div class="content-wrapper">
+      {% if message %}
+        <div class="messagedata">{{message}}
+          <a data-action="close"><i class="ft-x"></i></a>
+        </div>
+      {% endif %}
+      <div class="content-wrapper-before"></div>
+      <div class="content-header row">
+        <div class="content-header-left col-md-4 col-12 mb-2">
+          <h3 class="content-header-title">Reviews</h3>
+        </div>
+        <div class="content-header-right col-md-8 col-12">
+          <div class="breadcrumbs-top float-md-right">
+            <div class="breadcrumb-wrapper mr-1">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a>
+                </li>
+                <li class="breadcrumb-item active">Reviews
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-body"><!-- Basic Tables start -->
+          <!-- Striped rows start -->
+          <div class="row">
+              <div class="col-12">
+                  <div class="card">
+                      <!-- <div class="card-header">
+                          <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                          <div class="heading-elements">
+                              <ul class="list-inline mb-0">
+                                  <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                  <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                              </ul>
+                          </div>
+                      </div> -->
+                      <div class="card-content collapse show">
+                          <div class="card-body">
+                              <div class="row">
+                                <div class="col-sm-6">
+                                  <p class="card-text">Filters</p>
+                                </div>
+                                <!-- <div class="col-sm-6">
+                                  <p class="card-text custom-addlink float-right"><a class="btn btn-icon btn-info" href="/user/add">Add User</a></p>
+                                </div> -->
+                              </div>
+                          </div>
+                          <div class="table-responsive">
+                              <table class="table table-striped">
+                                  <thead>
+                                      <tr>
+                                          <!-- <th scope="col">Image</th> -->
+                                          <th scope="col">Title</th>
+                                          <th scope="col">Review By</th>
+                                          <th scope="col">Review To</th>
+                                          <th scope="col">Rate</th>
+                                          <th scope="col">Action</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                        <form accept="/reviews" method="get">
+                                         <!--  <th></th> -->
+                                         <th>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="title" value="{{ searchData.title }}">
+                                            </fieldset>
+                                          </th>
+                                          <th>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="from" value="{{ searchData.from }}">
+                                            </fieldset>
+                                          </th>
+                                          <th>
+                                            <fieldset class="form-group">
+                                                <input type="text" class="form-control" name="to" value="{{ searchData.to }}">
+                                            </fieldset>
+                                          </th>
+                                          <th>
+                                            <fieldset class="form-group">
+                                                <input type="number" class="form-control" name="ratedata" value="{{ searchData.ratedata }}">
+                                                
+                                            </fieldset>
+                                          </th>
+                                          <th>
+                                            <fieldset class="form-group">
+                                                <button type="submit" class="btn btn-icon btn-info mr-1"><i class="la la-search"></i></button>
+                                            </fieldset>
+                                          </th>
+                                        </form>
+                                      </tr>
+                                      {% if reviews %}
+                                      {% for review in reviews %}
+                                        <tr>
+                                          <td>{{ review.title }}</td>
+                                          <td>{{ review.user[0].firstname }} {{ review.user[0].lastname }}</td>
+                                          <td>{{ review.cook[0].firstname }} {{ review.cook[0].lastname }}</td>
+                                          <td>{{ review.rate|number_format(2, '.', ',') }}</td>
+                                          <td><a href="/review/edit/{{ review._id }}">Edit</a>/
+                                            <a href="javascript:void(0)" data="/review/delete/{{ review._id }}?page={{page}}&limit={{limit}}&title={{ searchData.title }}&from={{ searchData.from }}&to={{ searchData.to }}&ratedata={{ searchData.ratedata }}" data-toggle="modal" data-target="#myModal" class="deleteButton">Delete</a></td>
+                                        </tr>
+                                      {% endfor %}
+                                      {% else %}
+                                      <tr><td colspan="3">No result found</td></tr>
+                                      {% endif %}
+                                  </tbody>
+                              </table>
+                          </div>
+                          {% if totalpage > 1 %}
+                            <ul class="custom-pagination">
+                            {% for i in 1..totalpage %}
+                                {% if page == i %}
+                                <li class="active"><a href="/reviews?page={{i}}&limit={{limit}}&title={{ searchData.title }}&from={{ searchData.from }}&to={{ searchData.to }}&ratedata={{ searchData.ratedata }}">{{i}}</a></li>
+                                {% else %}
+                                <li><a href="/reviews?page={{i}}&limit={{limit}}&title={{ searchData.title }}&from={{ searchData.from }}&to={{ searchData.to }}&ratedata={{ searchData.ratedata }}">{{i}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            </ul>
+                          {% endif %}
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Striped rows end -->
+
+      </div>
+
+    </div>
+  </div>
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h2>Are you sure?</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a href="" id="deletepopup" class="btn btn-icon btn-info ml-1">Confirm</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+  {% endblock %}

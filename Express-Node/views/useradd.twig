@@ -1,0 +1,173 @@
+{% extends "layout/layout.html" %}
+{% block content %}
+    <div class="app-content content">
+      <div class="content-wrapper">
+        {% if message %}
+          <div class="messagedata">{{message}}
+            <a data-action="close"><i class="ft-x"></i></a>
+          </div>
+        {% endif %}
+        <div class="content-wrapper-before"></div>
+        <div class="content-header row">
+          <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Add User</h3>
+          </div>
+          <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+              <div class="breadcrumb-wrapper mr-1">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active">Add User
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body"><!-- Basic Inputs start -->
+            <section class="basic-inputs">
+              <div class="row match-height">
+                  <div class="col-xl-12 col-lg-12 col-md-12">
+                      <div class="card">
+                          <div class="card-block">
+                            <form action="/user/add" method="post" id="add_user" enctype="multipart/form-data">
+                              <div class="card-body">
+                                <h5 class="mt-2 require">Is Admin</h5>
+                                <fieldset class="form-group">
+                                    <select type="text" name="is_admin" class="form-control" value="{{ userData.is_admin }}" >
+                                      <option value="false" {% if userData.is_admin == false %} selected {% endif %}>No</option>
+                                      <option value="true" {% if userData.is_admin == true %} selected {% endif %}>Yes</option>
+                                    </select>
+                                </fieldset>
+                                <h5 class="mt-2 require">First Name</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="firstname" class="form-control" value="{{ userData.firstname }}" >
+                                </fieldset>
+                                <h5 class="mt-2 require">Last Name</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="lastname" class="form-control" value="{{ userData.lastname }}" >
+                                </fieldset>
+                                <h5 class="mt-2 require">Email</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="email" class="form-control" value="{{ userData.email }}">
+                                </fieldset>
+                                 <h5 class="mt-2 require">Password</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="password" id="password" class="form-control" value="" >
+                                </fieldset>
+                                <h5 class="mt-2 require">About me</h5>
+                                <fieldset class="form-group">
+                                    <textarea class="form-control" name="about_me" id="placeTextarea" rows="3" placeholder="About me">{{ userData.about_me }}</textarea>
+                                </fieldset>
+                                <h5 class="mt-2">Image</h5>
+                                <fieldset class="form-group">
+                                    <input type="file" name="pictures" class="form-control">
+                                    {% if userData.pictures %}
+                                    <img src="{{BASE_URL}}{{ userData.pictures }}" width="50px" class="user-image-custom">
+                                    {% endif %}
+                                </fieldset>
+                                <!-- <fieldset class="form-group">
+                                    <button type="submit" class="btn btn-dark btn-min-width mr-1 mb-1">update</button>
+                                </fieldset> -->
+                              
+                            <!-- </form> -->
+                          <!-- </div>
+                      </div>
+                       <div class="card">
+                          <div class="card-block">
+                              <div class="card-body"> -->
+                                <div class="row"><div class="col-sm-12"><h2>Address</h2></div></div>
+                                <h5 class="mt-2">Country</h5>
+                                <fieldset class="form-group">
+                                  <select name="country" class="form-control" id="countryData">
+                                    <option value="">Select Country</option>
+                                    {% for coun in Country.getAllCountries() %}
+                                      <option value="{{coun.isoCode}}">{{coun.name}}</option>
+                                    {% endfor %}
+                                  </select>
+                                  <!-- <input type="text" name="country" class="form-control" value="{{ cookData.country }}" > -->
+                                </fieldset>
+                                <h5 class="mt-2">State</h5>
+                                <fieldset class="form-group">
+                                  <select type="text" name="state" class="form-control" id="stateData" disabled>
+                                    <option value="">Select State</option>
+                                  </select>
+                                    <!-- <input type="text" name="state" class="form-control" value="{{ cookData.state }}" > -->
+                                </fieldset>
+                                <h5 class="mt-2">City</h5>
+                                <fieldset class="form-group">
+                                    <!-- <input type="text" name="city" class="form-control" value="{{ cookData.city }}" > -->
+                                    <select type="text" name="city" class="form-control" id="cityData" disabled>
+                                      <option value="">Select City</option>
+                                    </select>
+                                </fieldset>
+                                <h5 class="mt-2">Zipcode</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="zipcode" class="form-control" value="{{ userData.zipcode }}" >
+                                </fieldset>
+                                <h5 class="mt-2">Address</h5>
+                                <fieldset class="form-group">
+                                    <input type="text" name="address" class="form-control" value="{{ userData.address }}" >
+                                </fieldset>
+
+                                <h5 class="mt-2">Location</h5>
+                                <fieldset class="form-group">
+                                    <input id="autocomplete" name="auto_location" class="form-control autocomplete" type="text" />
+                                    <input id="latitude" name="lat" value="{{ userData.lat }}" type="hidden"/>
+                                    <input id="longitude" name="lng" value="{{ userData.lng }}" type="hidden"/>
+                                </fieldset>
+                                
+                                <fieldset class="form-group">
+                                    <button type="submit" class="btn btn-dark btn-min-width mr-1 mb-1">Create</button>
+                                </fieldset>
+                              </div>
+                            </form>
+                          </div>
+                      </div>
+                      
+                  </div>
+                </div>
+            </section>
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+  {% block scriptsdata %}
+    <script type="text/javascript">
+      var states = {{State.getAllStates()|json_encode()}}
+      var cities = {{City.getAllCities()|json_encode()}}
+      jQuery(document).ready(function(){
+        jQuery('input, textarea').blur(function(){
+          jQuery(this).val($.trim(jQuery(this).val()))
+        })
+        
+        jQuery('#countryData').change(function(){
+          if(jQuery('#countryData').val() != '') {
+            var html= '<option value="">Select State</option>';
+            states.forEach(function(data){
+              if(data.countryCode == jQuery('#countryData').val()){
+                html +='<option value="'+data.isoCode+'">'+data.name+'</option>';
+              }
+            });
+            $("#stateData").empty().append(html).attr('disabled' , false);
+          } else {
+            $("#stateData").attr('disabled' , true);
+          }
+        });
+        jQuery('#stateData').change(function(){
+          if(jQuery('#countryData').val() != '') {
+            var html= '<option value="">Select City</option>';
+            cities.forEach(function(data){
+              if(data.countryCode == jQuery('#countryData').val() && data.stateCode == jQuery('#stateData').val()){
+                html +='<option value="'+data.name+'">'+data.name+'</option>';
+              }
+            });
+            $("#cityData").empty().append(html).attr('disabled' , false);
+          } else {
+            $("#cityData").attr('disabled' , true);
+          }
+        });
+      });
+    </script>
+{% endblock %}
